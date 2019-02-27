@@ -1,7 +1,10 @@
 package be.cixxor.api.utils;
 
 import org.bukkit.Location;
+import org.bukkit.TreeType;
+import org.bukkit.World;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.util.Vector;
 
 public class EntityUtils {
@@ -21,6 +24,19 @@ public class EntityUtils {
 	
 	public static void setVolocity(Entity ent, double x, double y, double z) {
 		ent.setVelocity(new Vector(x,y,z));
+	}
+
+	public static void spawnEntity(World world, EntityType ent, Location location){
+		world.spawnEntity(location,ent);
+	}
+	public static void saveWorld(World world){
+		world.save();
+	}
+	public static void TreeGenerator(World world, Location location, TreeType TreeType){
+		world.generateTree(location,TreeType);
+	}
+	public static void allowPVP(World world,boolean b){
+		world.setPVP(b);
 	}
 
 }
